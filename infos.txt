@@ -1,0 +1,22 @@
+couleur :
+
+#e14b4c rouge
+#5b8bd3 bleu
+#424966 grisatre
+
+
+font :
+
+font-family: 'Changa', sans-serif;
+
+font-family: 'Spinnaker', sans-serif;
+
+
+le joeur choisit le symbole.
+une fois que c'est fait il ne peux plus cliquer autre part et un décompte est affiché de 3  à 0 
+à 0 l'ordi montre son choix et les scores sont mis a jours et le joeur peut de nouveau choisir
+
+ajouter l'icone d'un trophée devant le nom du joueur qui gagne ?
+
+
+Mettre le choix des joueurs dans les divs aux extrémités 

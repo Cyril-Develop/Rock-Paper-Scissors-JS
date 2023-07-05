@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Rock Paper Scissors</title>
+            <link rel="stylesheet" href="./style.css">
+            <!-- CUSTON FONT -->
+            <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+            <!-- CDN FONT AWESOME -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        </head>
+        <body>
+           
+            <h1>Hand Fight</h1>
+            <div class="game">
+                <p class="game_computer_info">Opponent</p>
+                <div class="game_ring">
+                    <div class="game_weapon_container">
+                        <p>Choose your weapon</p>
+                        <div class="game_weapons">
+                            <div class="weapon rock" data-weapon="rock"></div>
+                            <div class="weapon paper" data-weapon="paper"></div>
+                            <div class="weapon scissors" data-weapon="scissors"></div>
+                        </div>
+                    </div>
+                    <div class="game_restart">
+                        <p class="game_restart_info"></p>
+                        <button class="game_restart_btn">Rematch</button>
+                    </div>
+                    <span class="player_choice"></span>
+                    <span class="computer_choice"></span>
+                    <span class="countDown"></span>
+                </div>
+                <p class="game_player_info">Player</p>
+            </div>
+
+            <script src="./app.js"></script>
+        </body>
+    </html>

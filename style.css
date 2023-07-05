@@ -1,0 +1,215 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    background-color: #424966;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-family: 'Kalam', cursive;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game_player_info,
+.game_computer_info{
+    width: 100%;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-family: 'Changa', sans-serif;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.194);
+}
+
+.computer_choice,
+.player_choice{ 
+    position: absolute;
+    font-size: clamp(7rem, 12vw, 11rem);
+}
+
+.computer_choice{
+    transform: rotate(180deg);   
+}
+
+.player_choice{
+    bottom: 0;
+}
+
+.game_ring{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+    background-color: #dcb36f;
+}
+
+.game_weapon_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+
+.game_weapon_container p{
+    text-align: center;
+    font-family: 'Changa', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+}
+
+.game_weapons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.game_restart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.game_restart_info{
+    font-size: clamp(4rem, 15vw, 7rem);
+    font-family: 'Kalam', cursive;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.game_restart_btn{
+    outline : none;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(2rem, 3vw, 4rem);
+    cursor: pointer;
+    font-family: 'Kalam', cursive;
+    background-color: transparent;
+}
+
+.game_restart_btn:hover{
+    color: #424966;
+}
+
+.countDown{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-family: 'Kalam', cursive;   
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ANIM JS */
+.moveLeft{
+    animation: moveLeft .5s forwards ease-in-out;
+}
+
+.moveRight{
+    animation: moveRight .5s forwards ease-in-out;
+}
+
+.showRestart{
+    animation : reload 1s forwards ease-in-out;
+}
+
+/*** ANIMATION ***/
+@keyframes count {
+    from{
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    } to {
+        opacity: 0;
+        transform:translate(-50%, -50%) scale(5);
+    }
+}
+
+@keyframes moveLeft {
+    to{
+        transform: translateX(-100%);
+    }  
+}
+@keyframes moveRight{
+    to{
+        transform: translateX(100%);
+    }  
+}
+
+@keyframes reload {
+    to{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.countDownAnim{
+    animation: count 1s ease-in-out infinite;
+}
+
+/*************************************************************/
+
+.weapon{
+    cursor: pointer;
+}
+
+.weapon:hover{
+    color: #424966;
+}
+
+.scissors{
+    transform: rotate(90deg); 
+}
+
+/*** PSEUDO ELEMENT ***/
+.rock::before,
+.paper::before,
+.scissors::before{
+    font-family: 'Font Awesome 6 Free';
+    font-size: clamp(7rem, 12vw, 11rem);
+}
+
+.rock::before{
+    content: '\f255';  
+}
+
+.paper::before{
+    content: '\f256'; 
+}
+
+.scissors::before{
+    content: '\f257';   
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 550px){
+    .game_ring{
+        height: 400px;
+    }
+}
